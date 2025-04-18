@@ -8,64 +8,80 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #f7e7f0, #ffffff);
-      color: #333;
+      background-color: #121212; /* Dark background */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     header {
-      padding: 2rem;
       text-align: center;
+      padding: 20px;
+      margin-top: 30px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #e91e63;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      color: #1db954; /* Spotify green */
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
     iframe {
-      border-radius: 12px;
-      width: 90%;
+      border-radius: 10px;
+      width: 100%;
       max-width: 400px;
       height: 80px;
       border: none;
+      margin-bottom: 30px;
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      width: 100%;
     }
 
     .photo {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: #181818; /* Dark card background */
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       overflow: hidden;
-      max-width: 250px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
     }
 
     .photo img {
       width: 100%;
       display: block;
+      border-bottom: 5px solid #1db954; /* Spotify green border */
     }
 
     .caption {
-      padding: 1rem;
-      font-size: 1rem;
-      color: #555;
+      padding: 15px;
+      font-size: 1.1rem;
       text-align: center;
+      color: #b3b3b3; /* Light gray for captions */
+      font-weight: bold;
     }
 
     .message {
-      padding: 2rem;
       text-align: center;
-      font-size: 1.1rem;
-      color: #444;
+      font-size: 1.2rem;
+      color: #b3b3b3;
       max-width: 700px;
-      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
     }
   </style>
 </head>
@@ -73,7 +89,7 @@
   <header>
     <h1>Our Sweet Memories 💞</h1>
     <!-- Spotify Player -->
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1AJuAdgOh2qfF0BP2ZY3vZ?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/track/1AJuAdgOh2qfF0BP2ZY3vZ?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </header>
 
   <section class="gallery">
